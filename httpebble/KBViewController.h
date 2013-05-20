@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "KBPebbleThing.h"
+#import "APIKeyViewController.h"
 
 @interface KBViewController: UIViewController<KBPebbleThingDelegate>  {
     IBOutlet UILabel* connectedLabel;
+    APIKeyViewController *apiView;
+    UINavigationController *navController;
+    
 }
+
+@property (nonatomic, retain) APIKeyViewController *apiView;
+@property (nonatomic, retain) UINavigationController *navController;
 
 - (void)pebbleConnected:(PBWatch *)watch;
 - (void)pebbleDisconnected;

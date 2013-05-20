@@ -14,16 +14,39 @@
 
 @implementation KBAppDelegate
 
+@synthesize navigationController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[KBViewController alloc] initWithNibName:@"KBViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
     
     self.pebbleThing = [[KBPebbleThing alloc] init];
     self.pebbleThing.delegate = self.viewController;
+    
+    
+    
+    self.window.rootViewController = self.viewController;
+    navigationController = [[UINavigationController alloc] initWithRootViewController:self.window.rootViewController];
+    navigationController.navigationBar.tintColor = [UIColor
+                                                    colorWithRed:217.0/255
+                                                    green:33.0/255
+                                                    blue:0
+                                                    alpha:1];
+    
+    
+    self.viewController = [[KBViewController alloc] initWithNibName:@"KBViewController" bundle:nil];
+    self.viewController.navController = navigationController;
+    
+    [navigationController pushViewController:self.viewController animated:YES];
+    
+    
+        
+    //navigationController.navigationBarHidden = YES;
+    [self.window addSubview:navigationController.view];
+    [self.window makeKeyAndVisible];
+    
+    
 
     return YES;
 }

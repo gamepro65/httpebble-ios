@@ -304,6 +304,11 @@ void httpErrorResponse(PBWatch* watch, NSNumber* success_key, NSInteger status) 
         NSLog(@"Using deprecated protocol.");
     }
     
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    [settings setObject:app_id forKey:@"Last-App-ID"];
+    
+    
+    
     NSLog(@"Asked to request the contents of %@", url);
     NSMutableDictionary *request_dict = [[NSMutableDictionary alloc] initWithCapacity:[message count]];
     for (NSNumber* key in message) {
@@ -313,9 +318,13 @@ void httpErrorResponse(PBWatch* watch, NSNumber* success_key, NSInteger status) 
         }
         [request_dict setValue:[message objectForKey:key] forKey:[key stringValue]];
     }
+    [request_dict setValue:[settings objectForKey:[app_id stringValue]] forKey:@"APIKEY"];
+    
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
     NSData *json = [NSJSONSerialization dataWithJSONObject:request_dict options:0 error:nil];
     [request setHTTPMethod:@"POST"];
+    
     [request setHTTPBody:json];
     [request setValue:[watch serialNumber] forHTTPHeaderField:@"X-Pebble-ID"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

@@ -33,6 +33,10 @@
 		89E96D58173DB47600E2DE9D /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E96D57173DB47600E2DE9D /* ExternalAccessory.framework */; };
 		89E96D5A173DB47D00E2DE9D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E96D59173DB47D00E2DE9D /* CoreMotion.framework */; };
 		89E96D5C173DB49500E2DE9D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E96D5B173DB49500E2DE9D /* MessageUI.framework */; };
+		A77FFE7A17494F4D001A4A26 /* APIKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77FFE7817494F4D001A4A26 /* APIKeyViewController.m */; };
+		A77FFE7B17494F4D001A4A26 /* APIKeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77FFE7917494F4D001A4A26 /* APIKeyViewController.xib */; };
+		A77FFE7E1749753B001A4A26 /* SubKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77FFE7D1749753B001A4A26 /* SubKeyViewController.m */; };
+		A77FFE811749C400001A4A26 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = A77FFE801749C400001A4A26 /* APIKey.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +73,13 @@
 		89E96D57173DB47600E2DE9D /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		89E96D59173DB47D00E2DE9D /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		89E96D5B173DB49500E2DE9D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A77FFE7717494F4D001A4A26 /* APIKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKeyViewController.h; sourceTree = "<group>"; };
+		A77FFE7817494F4D001A4A26 /* APIKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIKeyViewController.m; sourceTree = "<group>"; };
+		A77FFE7917494F4D001A4A26 /* APIKeyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APIKeyViewController.xib; sourceTree = "<group>"; };
+		A77FFE7C1749753B001A4A26 /* SubKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubKeyViewController.h; sourceTree = "<group>"; };
+		A77FFE7D1749753B001A4A26 /* SubKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubKeyViewController.m; sourceTree = "<group>"; };
+		A77FFE7F1749C400001A4A26 /* APIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
+		A77FFE801749C400001A4A26 /* APIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIKey.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +154,16 @@
 				89E96D41173DA96B00E2DE9D /* KBViewController.h */,
 				89E96D42173DA96B00E2DE9D /* KBViewController.m */,
 				89E96D44173DA96B00E2DE9D /* KBViewController.xib */,
+				A77FFE7717494F4D001A4A26 /* APIKeyViewController.h */,
+				A77FFE7817494F4D001A4A26 /* APIKeyViewController.m */,
+				A77FFE7917494F4D001A4A26 /* APIKeyViewController.xib */,
+				A77FFE7C1749753B001A4A26 /* SubKeyViewController.h */,
+				A77FFE7D1749753B001A4A26 /* SubKeyViewController.m */,
 				89E96D30173DA96B00E2DE9D /* Supporting Files */,
 				89E96D50173DB13700E2DE9D /* KBPebbleThing.h */,
 				89E96D51173DB13700E2DE9D /* KBPebbleThing.m */,
+				A77FFE7F1749C400001A4A26 /* APIKey.h */,
+				A77FFE801749C400001A4A26 /* APIKey.m */,
 			);
 			path = httpebble;
 			sourceTree = "<group>";
@@ -225,6 +243,7 @@
 				89AC13871746F465006847A7 /* cloudpebble.png in Resources */,
 				89BBD7151747081B00465DA9 /* icon.png in Resources */,
 				89BBD7171747082C00465DA9 /* icon@2x.png in Resources */,
+				A77FFE7B17494F4D001A4A26 /* APIKeyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +260,9 @@
 				89E96D52173DB13700E2DE9D /* KBPebbleThing.m in Sources */,
 				89AC134117458F0F006847A7 /* PebbleModel.xcdatamodeld in Sources */,
 				89AC134717459B20006847A7 /* KBPebbleValue.m in Sources */,
+				A77FFE7A17494F4D001A4A26 /* APIKeyViewController.m in Sources */,
+				A77FFE7E1749753B001A4A26 /* SubKeyViewController.m in Sources */,
+				A77FFE811749C400001A4A26 /* APIKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

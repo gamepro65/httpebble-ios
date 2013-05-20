@@ -12,11 +12,17 @@
 @class KBViewController;
 
 @interface KBAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    UINavigationController *navigationController;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) KBViewController *viewController;
 
 @property (strong, nonatomic) KBPebbleThing *pebbleThing;
+
+@property (nonatomic, retain) UINavigationController *navigationController;
+
 
 @end

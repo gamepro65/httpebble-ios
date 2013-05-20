@@ -13,16 +13,45 @@
 
 @end
 
+
+
 @implementation KBViewController
+
+
+@synthesize apiView, navController;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    UIBarButtonItem *infoButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"API Keys"
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self
+                                                                      action:@selector(APIKeys:)];
+    
+    self.navigationItem.rightBarButtonItem = infoButtonItem;
+    
+    
+    
+    APIKeyViewController *apiViewControl = [[APIKeyViewController alloc] initWithNibName:@"APIKeyViewController" bundle:[NSBundle mainBundle]];
+    self.apiView = apiViewControl;
+    
+    
+    
 }
+
 
 - (void)pebbleConnected:(PBWatch *)watch {
     [connectedLabel setText:[NSString stringWithFormat:@"Connected to %@", [watch name], nil]];
+}
+- (IBAction)APIKeys:(id)sender {
+    
+    [navController pushViewController:self.apiView animated:YES];
+    
 }
 
 - (void)pebbleDisconnected {
